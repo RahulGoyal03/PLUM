@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="footerCss.css">
+    <script src="https://kit.fontawesome.com/aa64b81c87.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <title>Plum</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        
+        .color2 {
+            width: 100%;
+            height: 170px;
+            background-color: #E6E6FA;
+        }
+        
+        .color3 {
+            width: 100%;
+            height: 300px;
+            background-color: #d9c4e3;
+        }
+        
+        .pick_container {
+            margin-left: 9%;
+            margin-right: 6%;
+            height: px;
+        }
+        
+        .pick_product {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .skin_img {
+            transform: scale(1);
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            margin: 2%;
+        }
+        
+        .skin_img:hover {
+            transform: scale(1.1);
+        }
+        
+        .pick_heading {
+            text-align: center;
+            color: #5b0c8b;
+            font-size: 55px;
+        }
+        
+        .pick1 {
+            border-radius: 3%;
+        }
+        
+        .container2 {
+            background-image: url("https://cdn.shopify.com/s/files/1/0390/2985/files/bestsellers_BG_5178572b-64e9-4dd1-aef8-15a83f4f332d.jpg?v=1620197136");
+            background-repeat: no-repeat;
+            background-size: 100% 500px;
+        }
+        
+        .bestsellers {
+            text-align: center;
+            font-size: 50px;
+            color: #5b0c8b;
+            padding-top: 1%;
+            position: relative;
+            z-index: 3;
+            bottom: 88px;
+        }
+        
+        .boxrow {
+            display: flex;
+            justify-content: space-between;
+            margin: 1px 200px 0px 200px;
+        }
+        
+        .box-col {
+            background: #c7adad;
+            border-radius: 10px;
+            width: 300px;
+            margin: 20px;
+            height: 90px;
+            text-align: center;
+        }
+        
+        .box-img {
+            margin-top: 20%;
+            width: 150px;
+            cursor: pointer;
+        }
+        
+        #view-btn {
+            width: 280px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: rgb(94, 12, 140);
+            outline: none;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 30px;
+            margin-top: 10%;
+            margin-left: 43%;
+            border-radius: 8px;
+        }
+        
+        #view-btn2 {
+            width: 280px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: rgb(94, 12, 140);
+            outline: none;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 30px;
+            margin-top: 10%;
+            margin-left: 40%;
+            border-radius: 8px;
+            position: relative;
+            bottom: 342px;
+            cursor: pointer;
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+        
+        #view-btn:hover {
+            cursor: pointer;
+            background-color: rgb(145, 71, 214);
+            transition: all 0.4s ease-out;
+        }
+        
+        .slid-container {
+            background-color: #DEDEDE;
+            height: 700px;
+            margin-top: 8%;
+        }
+        
+        .slid-heading {
+            text-align: center;
+            color: rgb(74, 9, 148);
+            font-size: 45px;
+            position: absolute;
+            top: 195%;
+            left: 33%;
+            transform: translate(-50, -50);
+        }
+        
+        .slid-img {
+            width: 150px;
+            margin: 1%;
+            border-radius: 5%;
+            transform: scale(1);
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .slid-img:hover {
+            transform: scale(1.1);
+        }
+        
+        .Simg1 {
+            margin-left: 10%;
+            margin-top: 2%;
+        }
+        
+        #follow-btn {
+            width: 280px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: rgb(94, 12, 140);
+            outline: none;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 30px;
+            margin-top: 4%;
+            margin-left: 47%;
+            border-radius: 8px;
+        }
+        
+        #follow-btn:hover {
+            cursor: pointer;
+            background-color: rgb(137, 66, 219);
+            transition: all 0.4s ease-out;
+        }
+        
+        .wholefooter {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .footer-container {
+            background-color: #fff7ec;
+            width: 100%;
+            height: 75%;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-heading {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-1 {
+            padding: 40px 100px 0px 30px;
+        }
+        
+        .footer-2 {
+            padding: 40px 70px 0px 100px;
+        }
+        
+        .footer-3 {
+            padding: 40px 70px 0px 100px;
+        }
+        
+        .footer-heading a {
+            color: rgb(29, 28, 28);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-heading a:hover {
+            color: rgb(13, 138, 138);
+        }
+        
+        .footer-email-form {
+            padding: 30px 20px 0px 150px;
+        }
+        
+        .footer-email-form h2 {
+            margin-bottom: 2rem;
+        }
+        
+        #footer-email {
+            width: 200px;
+            height: 40px;
+            border-radius: 3px;
+            outline: none;
+            padding-left: 1%;
+            margin-bottom: 1rem;
+        }
+        
+        #footer-email-btn {
+            width: 100px;
+            height: 40px;
+            border-radius: 4px;
+            background-color: #5b0c8b;
+            outline: none;
+            border: none;
+            color: white;
+            font-weight: 500;
+            font-size: medium;
+        }
+        
+        .mobile-no {
+            margin-left: 10%;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+        }
+        
+        .last-mail {
+            text-decoration: none;
+            padding-left: 15%;
+            color: black;
+            font-size: 20px;
+        }
+        
+        .sfooter {
+            width: 100%;
+            height: 25%;
+            background-color: #d9c4e3;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        #clean {
+            width: 340px;
+            height: 514px;
+            /* border: 1px solid red; */
+            display: inline-block;
+            background-image: url("https://cdn.shopify.com/s/files/1/0390/2985/files/clean-min-update_340x.png?v=1622096537");
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+        }
+        
+        #real {
+            width: 340px;
+            height: 514px;
+            /* border: 1px solid red; */
+            display: inline-block;
+            /* "https://cdn.shopify.com/s/files/1/0390/2985/files/real-min-update_340x.png?v=1622096570" */
+            background-image: url("https://cdn.shopify.com/s/files/1/0390/2985/files/real-min-update_340x.png?v=1622096570");
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+        }
+        
+        #good {
+            width: 340px;
+            height: 514px;
+            /* border: 1px solid red; */
+            display: inline-block;
+            background-image: url("https://cdn.shopify.com/s/files/1/0390/2985/files/good-min-update_340x.png?v=1622096608");
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+        }
+        
+        #starsbox {
+            position: relative;
+            bottom: 260px;
+            left: 16%;
+            display: grid;
+            grid-template-columns: 400px 400px 400px;
+            height: 0px;
+        }
+        
+        #starsbox>div {
+            height: 400px;
+        }
+        
+        #starsbox>div>img {
+            height: 100%;
+            border-radius: 20px;
+        }
+        
+        #styleclean {
+            font-size: 100px;
+            text-align: center;
+            font-family: 'Alex Brush', cursive;
+            color: #5b0c8b;
+        }
+        
+        #starsbox>div>h4 {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 100;
+        }
+        
+        #starsbox>div>h4:nth-child(1),
+        #starsbox>div>h4:nth-child(3) {
+            line-height: 0px;
+        }
+        
+        #btn {
+            width: 200px;
+            padding: 1%;
+            position: relative;
+            bottom: 70px;
+            margin-left: 45%;
+            font-size: large;
+            border-radius: 2%;
+            width: 100px;
+        }
+        
+        #view-btn2:hover {
+            cursor: pointer;
+            background-color: rgb(145, 71, 214);
+            transition: all 0.4s ease-out;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <header>
+        <div class="topHeading">
+            <p>Welcome to our PlumGoodness Store!!</p>
+        </div>
+        <div class="navbar">
+            <div class="list"><img src="/img/baseline_list_black_24dp.png" alt=""></div>
+            <div class="mainlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_skin_hair_maekup.png?v=1628248101" alt="logo">
+                <div class="line"></div>
+            </div>
+            <div class="secondlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_bodylovin.png?v=1628248113" alt="logo">
+                <div class="line2"></div>
+            </div>
+
+            <div class="searchbar">
+
+                <input id="search" type="text" placeholder="Search...">
+            </div>
+            <div class="favorite"><img src="/img/baseline_favorite_border_black_24dp.png" alt=""></div>
+            <div onclick="cart()" class="addtocart" style="border-color: yellow;"><img src="/img/baseline_local_mall_black_24dp.png" alt=""></div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <div id="slide"></div>
+    <script>
+        let images = [
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Desktop_Homepage_8_0ecb13b7-b539-4c6d-ad0e-d1d8a9f921ef.jpg?v=1633060898",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Homepage_Banner_Desktop_Site.jpg?v=1632974727",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Desktop_Homepage_16c60e24-567d-4172-9b66-e8d6ea6b6e53.jpg?v=1632719590",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Desktop_Homepage_3_c5a2f83b-5c60-498c-9728-8dc07cf9de89.jpg?v=1632201593",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/DESK_HP_BANNER_V2_e54f50e1-f314-4819-ac76-cff4d0154299.jpg?v=1632733163",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/slider-desktop-edp-new-version_1.jpg?v=1632740165"
+        ];
+        let cont = document.getElementById("slide");
+        let interval;
+
+        function slide() {
+
+            let count = 0;
+            let img = document.createElement("img");
+            img.src = images[0];
+            cont.append(img);
+            count = count + 1;
+
+
+            let interval = setInterval(function() {
+                cont.innerHTML = null;
+                if (count == images.length) {
+                    count = 0;
+                }
+
+                let img = document.createElement("img");
+                img.src = images[count];
+                cont.append(img);
+
+                count = count + 1;
+            }, 5000)
+
+        }
+
+        slide();
+    </script>
+    <div class="color2"></div>
+    <div id="starsbox">
+        <div id="clean">
+            <h1 id="styleclean">clean</h1>
+            <h4>no nasties,</h4>
+            <h4>no animal</h4>
+            <h4>ingredients</h4>
+        </div>
+        <div id="real">
+            <h1 id="styleclean">real</h1>
+            <h4>no lies,</h4>
+            <h4>no beauty</h4>
+            <h4>standards</h4>
+        </div>
+        <div id="good">
+            <h1 id="styleclean">good</h1>
+            <h4>for you</h4>
+            <h4>and</h4>
+            <h4>planet</h4>
+        </div>
+    </div>
+
+    <div class="color3"></div>
+    <a href="https://plumgoodness.com/page/cleanrealgood"><strong id="btn">#cleanrealgood &gt;</strong></a>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("mouseenter", chnagePurple);
+        btn.addEventListener("mouseleave", chnagePurple2);
+
+        function chnagePurple() {
+            btn.style.backgroundColor = "purple"
+            btn.style.color = "white"
+            btn.style.borderRadius = "5%"
+
+
+        }
+
+        function chnagePurple2() {
+            btn.style.backgroundColor = "white"
+            btn.style.color = "purple"
+            btn.style.borderRadius = "5%"
+
+
+        }
+
+        function cart() {
+            window.location.href = "cart.html"
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <div class="pick_heading">
+        <h3>pick a plum</h3>
+    </div>
+    <div class="pick_container">
+
+        <div class="pick_product">
+            <div class="skin_img">
+                <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/2_v2_DESK_400x.jpg?v=1632824910" class="pick1" />
+            </div>
+            <div class="skin_img">
+                <img src="	https://cdn.shopify.com/s/files/1/0390/2985/files/3_v2_DESK_400x.jpg?v=1632824889" class="pick1" />
+            </div>
+            <div class="skin_img">
+                <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/2_v2_DESK_400x.jpg?v=1632824910" class="pick1" />
+            </div>
+
+            <div class="skin_img">
+                <img src="	https://cdn.shopify.com/s/files/1/0390/2985/files/4_v2_DESK_400x.jpg?v=1632824949" class="pick1" />
+            </div>
+            <div class="skin_img">
+                <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/f_website_long_banner_770x.jpg?v=1632824989" class="pick1" />
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container2">
+        <div class="bestsellers">
+            <h2>bestsellers</h2>
+
+
+        </div>
+        <div onclick="aaaa(event)" id="PRODUCTS" class="products">
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>15% off</h4>
+                    </div>
+                    <img src="/img/product15.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+                    <div class="RATING">
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="reviews">133 reviews</span>
+                    </div>
+                    <div class="ProductName">
+                        <p>Green Tea Night Gel - Twin Pack Limited Edition Pamper Kit</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;1700.00</del> &#8377;1399.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>25% off</h4>
+                    </div>
+                    <img src="/img/product11.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+                    <div class="RATING">
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="reviews">1133 reviews</span>
+                    </div>
+                    <div class="ProductName">
+                        <p>Plum BodyLovin' Limited Edition Pamper Kit</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;1800.00</del> &#8377;1499.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>15% off</h4>
+                    </div>
+                    <img src="/img/product5.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+                    <div class="RATING">
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="reviews">1563 reviews</span>
+                    </div>
+                    <div class="ProductName">
+                        <p>15% Vitamin C Face Serum with Mandarin | For Glowing Skin</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;2700.00</del> &#8377;1999.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>25% off</h4>
+                    </div>
+                    <img src="/img/product1.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+                    <div class="RATING">
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="rating">&starf;</span>
+                        <span class="reviews">1353 reviews</span>
+                    </div>
+                    <div class="ProductName">
+                        <p> Daily + Weekly Green Tea Kit For Clearer Skin | Free Bag</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;8700.00</del> &#8377;7399.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <input onclick="Views()" type="submit" value="View more" id="view-btn2">
+
+
+        <div class="bestproduct">
+
+        </div>
+    </div>
+
+    <div class="boxrow">
+        <div class="box-col">
+            <p>
+                We love the fact thatthese Formulations are vegan, cruelty->free $ paraben-free
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/1_24950cd6-ac9b-45fc-9b50-92b1a904e9a8_200x.png?v=1620283572" class="box-img" />
+        </div>
+        <div class="box-col">
+            <p>
+                Your hair needs a boost $ there's no better candidate that the plum Mega Moisturizing Hair Mask
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/6_17ac2b85-481c-4198-a4bf-cfa053a6d6e7_200x.jpg?v=1624887311" class="box-img" />
+        </div>
+        <div class="box-col">
+            <p>
+                This clay-based face mask has AhAs to exfoliate and Green Tea to heal and prevent acne
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/2_f1e3b604-b098-49e6-9ca0-c3a094732227_200x.png?v=1620283603" class="box-img" />
+        </div>
+
+    </div>
+
+
+    <div>
+        <input type="submit" value="View more" id="view-btn">
+    </div>
+
+    <div class="slid-container">
+        <div class="slid-heading">
+            <h2 style="
+            position: relative;
+            top: 2100px;
+        ">@plumgoodness</h2>
+        </div>
+        <div>
+            <marquee>
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243034596_4456303007817896_7661973523599374836_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=c9zOs5dg2ZoAX8uIv6X&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=7fad22d1d51f4b28f653c80d530734e2&oe=615AE105"
+                    class="slid-img" />
+
+
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/242726013_560000912120757_2602998721191289129_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=eFl6mfFA6pcAX8ftDYX&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=e3bc0d37e07d7e2123abd1c91336b9da&oe=615AC875"
+                    class="slid-img" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/242856052_275704174228914_396378634415904341_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=E8TG7BKYrX8AX_PKZo1&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=55f6d4e7d73bc0057626865becae7a41&oe=615AA375"
+                    class="slid-img Simg1" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243124143_550806379522754_5432817870802592051_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=Or-ip-wZddIAX9qXjrp&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=ca1c828fcb9ba9431739bea2844e8bd5&oe=615B9032"
+                    class="slid-img" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243368245_356433206227084_7665724613648412181_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=42tGL_gZDxEAX82OJ7V&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=e8a51d47f8512f89cfe5a6026030c6db&oe=615B9419"
+                    class="slid-img" />
+                <br>
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/242800014_1973330136167134_2333443306201688002_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=eT6-Az4c5acAX-WeHV0&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=69fd7d9bbfe04f1ba5c19011a7512cbc&oe=615A9DFB"
+                    class="slid-img" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243078729_142521391427528_1013913594591133045_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=9LxdUnSS9toAX_CvRsO&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=8e6a8c06e3d9985645efb39139ec890e&oe=615AA071"
+                    class="slid-img Simg1" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243335073_912710959332190_8683595336330946870_n.webp.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=cTa1tuLa8IcAX82i5rr&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=dbda3a99734f12c31a97637d2eda1a76&oe=615A743C"
+                    class="slid-img" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243328775_338272874734771_7925632157947592615_n.webp.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=4TT31naVZv8AX_Kd_4W&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=a5a4a3e9014b7633dc6360c8c0ad7360&oe=615AF2F6"
+                    class="slid-img Simg1" />
+
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243363709_547713989792815_1569852382676318463_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=Trg4UCyXQV8AX9EreAc&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=e9949cd1d67d9becfba0ebb2340b4749&oe=615AB720"
+                    class="slid-img" />
+                <img src="https://scontent-lcy1-1.cdninstagram.com/v/t51.29350-15/243355658_606451813720101_7564211603223781482_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=_TmS5TETE0QAX-F7S6F&_nc_ht=scontent-lcy1-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=4f41b53aa64cb0ba9ecd5559fc8f4b83&oe=615AF5FB"
+                    class="slid-img" />
+
+            </marquee>
+        </div>
+
+        <div>
+            <input type="submit" value="follow us" id="follow-btn">
+        </div>
+    </div>
+
+
+
+
+
+    <div class="wholefooter">
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-heading footer-1">
+                    <h2>shop</h2>
+                    <a href="#">Skincare</a>
+                    <a href="#">Haircare</a>
+                    <a href="#">Bodycare</a>
+                    <a href="#">Makeup</a>
+                </div>
+                <div class="footer-heading footer-2">
+                    <h2>learn</h2>
+                    <a href="#">Plum blogs</a>
+                    <a href="#">Plum features</a>
+                    <a href="#">Plum Rewards</a>
+
+                </div>
+                <div class="footer-heading footer-3">
+                    <h2 style="color: black;">help</h2>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Empties4Good</a>
+                </div>
+                <div class="footer-email-form">
+                    <h2>For exclusive previews, offers<br> & all things beauty! We hate spam.</h2>
+                    <input type="email" placeholder="enter email address" id="footer-email">
+                    <input type="submit" value="subscribe" id="footer-email-btn">
+                    <hr>
+                    <div class="font">
+                        <div class="icon">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-instagram-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-youtube fa-2x"></i></i></a>
+                            <a href="#" class="mobile-no">+91-7506496604</a>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <a href="#" class="last-mail">hello@plumgoodness.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="sfooter">
+            <p id="rights">©️ 2021,Plum. All rights reserved.</p>
+            <p id="rights">Privacy Policy&nbsp | &nbspTerms & Conditions</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    function Views() {
+        window.location.href = "products.html"
+
+    }
+</script>
