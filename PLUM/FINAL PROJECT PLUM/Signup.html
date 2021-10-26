@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa64b81c87.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="layout1.css">
+    <title>Plum</title>
+
+</head>
+
+
+<body>
+    <header>
+        <div class="topHeading">
+            <p>Welcome to our PlumGoodness Store!!</p>
+        </div>
+        <div class="navbar">
+            <div class="list"><img src="/img/baseline_list_black_24dp.png" alt=""></div>
+
+
+            <div onclick="home()" class="mainlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_skin_hair_maekup.png?v=1628248101" alt="logo">
+                <div class="line"></div>
+            </div>
+            <div class="secondlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_bodylovin.png?v=1628248113" alt="logo">
+                <div class="line2"></div>
+            </div>
+
+            <div class="searchbar">
+
+                <input id="search" type="text" placeholder="Search...">
+            </div>
+            <div class="favorite"><img src="/img/baseline_favorite_border_black_24dp.png" alt=""></div>
+
+            <div onclick="cart()" class="addtocart"><img src="/img/baseline_local_mall_black_24dp.png" alt=""></div>
+
+
+        </div>
+    </header>
+
+
+    <div class="myaccount">my account</div>
+
+
+    <div class="container">
+
+        <div>
+            <form onsubmit="signin(event)" class="form" id="myForm">
+                <h1 class="form-title" style="color: purple;">login</h1>
+                <div class="form-message message-error"></div>
+                <div class="form-input-grp">
+                    <input type="text" class="form_int2" autofocus placeholder="Email Address" id="email">
+                    <div class="form-err-input"></div>
+                </div>
+                <div class="form-input-grp">
+                    <input type="password" class="form_int2" autofocus placeholder="Password" id="password">
+                    <p id="alertpassword"></p>
+                    <div class="form-err-input"></div>
+                </div>
+                <p class="form__text" style="font-family: Segoe Pro;">
+                    <a href="#" class="form__link">forgot password?</a>
+                </p>
+                <button class="form-button" type="submit">sign in</button>
+                <iframe id="one-click-social-login-buttons-1" class="one-click-social-login-buttons" frameborder="0" style="margin-top: 10px; width: 100%; overflow: hidden; height: 118px;" data-default_style="margin-top: 10px; overflow: hidden; width: 100%;" allowtransparency="yes"
+                    src="https://oneclicksociallogin.devcloudsoftware.com/api/socialbuttons/?cache_key=5012115381&amp;shop=plumgoodness-2.myshopify.com&amp;popup_type=&amp;current_url=https%3A%2F%2Fplumgoodness.com%2Faccount%2Flogin&amp;iframe_id=1">
+                </iframe>
+            </form>
+        </div>
+    </div>
+    <div style="display: inline-block; width: 200px; height: 500px">
+        <div style="width: 1px;  height: 500px; background-color: grey; margin-left: 50%; margin-top:10% ;"></div>
+    </div>
+
+    <div class="container2">
+        <div>
+            <form onsubmit="signup(event), setTimeout(function(){window.location.reload();},10);" id="myform">
+                <p class="form form-hidden" id="createAccount"></p>
+                <h1 class="form-title" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: purple;">sign up
+                </h1>
+                <div class="form-message message-error"></div>
+                <div class="form-input-grp">
+                    <input type="text" id="name" class="form_int2" autofocus placeholder="First Name">
+                    <div class="form-err-input"></div>
+                </div>
+                <div class="form-input-grp">
+                    <input type="text" id="signupUsername" class="form_int2" autofocus placeholder="Last Name">
+                    <div class="form-err-input"></div>
+                </div>
+                <div class="form-input-grp">
+                    <input type="text" class="form_int2" autofocus placeholder="Email Address" id="emaill">
+                    <div class="form-err-input"></div>
+                </div>
+                <div class="form-input-grp">
+                    <input type="password" class="form_int2" autofocus placeholder="Password" id="passwordd">
+                    <div class="form-err-input"></div>
+                </div>
+                <div class="form-input-grp">
+                    <input type="password" class="form_int2" autofocus placeholder="Confirm password">
+                    <div class="form-err-input"></div>
+                </div>
+                <button class="form-button" type="submit">sign up</button>
+                <p class="form__text">
+                </p>
+        </div>
+        </form>
+    </div>
+
+
+
+
+
+    <div class="wholefooter">
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-heading footer-1">
+                    <h2>shop</h2>
+                    <a href="#">Skincare</a>
+                    <a href="#">Haircare</a>
+                    <a href="#">Bodycare</a>
+                    <a href="#">Makeup</a>
+                </div>
+                <div class="footer-heading footer-2">
+                    <h2>learn</h2>
+                    <a href="#">Plum blogs</a>
+                    <a href="#">Plum features</a>
+                    <a href="#">Plum Rewards</a>
+
+                </div>
+                <div class="footer-heading footer-3">
+                    <h2 style="color: black;">help</h2>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Empties4Good</a>
+                </div>
+                <div class="footer-email-form">
+                    <h2>For exclusive previews, offers<br> & all things beauty! We hate spam.</h2>
+                    <input type="email" placeholder="enter email address" id="footer-email">
+                    <input type="submit" value="subscribe" id="footer-email-btn">
+                    <hr>
+                    <div class="font">
+                        <div class="icon">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-instagram-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-youtube fa-2x"></i></i></a>
+                            <a href="#" class="mobile-no">+91-7506496604</a>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <a href="#" class="last-mail">hello@plumgoodness.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="sfooter">
+            <p id="rights">© 2021,Plum. All rights reserved.</p>
+            <p id="rights">Privacy Policy&nbsp | &nbspTerms & Conditions</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function signin(e) {
+        e.preventDefault();
+
+        let myform = document.getElementById("myForm")
+        let email = myForm.email.value;
+        let password = myForm.password.value;
+        let p = document.getElementById("alertpassword")
+
+        let all_users = JSON.parse(localStorage.getItem("users"))
+
+        all_users.forEach(function(user) {
+            if (email !== user.email || password !== user.password) {
+                p.textContent = "Invalid Password"
+            }
+            if (email === user.email && password === user.password) {
+                // alert("login ")
+                window.location.href = "home.html"
+            }
+
+        });
+
+    }
+
+
+
+    function signup(e) {
+        e.preventDefault();
+        let myForm = document.getElementById("myform");
+        // console.log(myForm)
+        let name = myForm.name.value;
+        let email = myForm.emaill.value;
+        let password = myForm.passwordd.value;
+        // console.log(name, email, password)
+
+        if (localStorage.getItem("users") === null) {
+            localStorage.setItem("users", JSON.stringify([]));
+        }
+
+        //    0. grab and prepare user data
+
+        let user = {
+            name,
+            email,
+            password,
+        };
+        // console.log(user)
+
+        // 1. get array localstorage first
+
+        let arr = JSON.parse(localStorage.getItem("users"));
+
+        // 2. push new user array
+
+        arr.push(user) //aded a new user(lastest data)
+
+        localStorage.setItem("users", JSON.stringify(arr));
+
+    }
+
+
+    function home() {
+        window.location.href = "home.html"
+
+    }
+
+    function cart() {
+        window.location.href = "cart.html"
+
+    }
+</script>

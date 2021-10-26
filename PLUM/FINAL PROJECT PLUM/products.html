@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa64b81c87.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="product.css">
+    <script src="product.js"></script>
+    <title>Plum</title>
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="topHeading">
+            <p>Welcome to our PlumGoodness Store!!</p>
+        </div>
+        <div class="navbar">
+            <div class="list"><img src="/img/baseline_list_black_24dp.png" alt=""></div>
+            <div class="mainlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_skin_hair_maekup.png?v=1628248101" alt="logo">
+                <div class="line"></div>
+            </div>
+            <div class="secondlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_bodylovin.png?v=1628248113" alt="logo">
+                <div class="line2"></div>
+            </div>
+
+            <div class="searchbar">
+
+                <input onkeyup="search()" id="SEARCH" type="text" placeholder="Search...">
+                <p id="append"></p>
+            </div>
+            <div class="favorite"><img src="/img/baseline_favorite_border_black_24dp.png" alt=""></div>
+            <div onclick="cart()" class="addtocart"><img src="/img/baseline_local_mall_black_24dp.png" alt="">
+                <p id="masai">0</p>
+            </div>
+
+        </div>
+    </header>
+    <div class="bestseller">
+        <h1>bestsellers</h1>
+    </div>
+    <div class="product-outer">
+        <div class="inner-layout">
+            <div class="left-filter">
+                <label id="SortBy" for="Recommended">Sort By:</label>
+                <select name="Recommended" id="filter">
+                    <option value="Recommended">Recommended</option>
+                    <option value="New Launch">New Launch</option>
+                    <option onclick="sortHL()" id="High" value="Price High To Low">Price: High To Low</option>
+                    <option value="Price Low To High">Price: Low To High</option>
+                    <option value="Plumster Favorite">Plumster Favorite</option>
+                </select>
+                <div class="filterlist">
+                    <div class="topFilter">Filter</div>
+                    <hr>
+                    <div class="filtercategory">
+                        <select class="beauty" name="Catagory" id="catagory">
+                            <option value="CATEGORY" style="width: 100%;">CATEGORY</option>
+                            <option value="Body">Body</option>
+                            <option value="Hair">Hair</option>
+                            <option value="Make Up">Make up</option>
+                            <option value="Skin">Skin</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Recommended" id="concern">
+                            <option value="CATEGORY" style="width: 100%;">CONCERN</option>
+                            <option value="Acne">Acne</option>
+                            <option value="Blemishes & Acne Scars">Blemishes & Acne Scars</option>
+                            <option value="Dry Circles & Puffy Eyes">Dry Circles & Puffy Eyes</option>
+                            <option value="Dry Damange hair">Dry Damange hair</option>
+                            <option value="Dry Skin">Dry Skin</option>
+                            <option value="Dullness & Uneven Texture">Dullness & Uneven Texture</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Format" id="format">
+                            <option value="PRODUCT" style="width: 100%;">PRODUCT FORMAT</option>
+                            <option value="Body Scrub">Body Scrub</option>
+                            <option value="Cleaner & Makeup removers">Cleaner & Makeup removers</option>
+                            <option value="Face Masks">Face Masks</option>
+                            <option value="Face Scrub">Face Scrub</option>
+                            <option value="Face Serums & Oils">Face Serums & Oils</option>
+                            <option value="Face Washes">Face Washes</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Price" id="price">
+                            <option value="PRICE" style="width: 100%;">PRICE</option>
+                            <option value="0-499">0-499</option>
+                            <option value="500-999">500-999</option>
+                            <option value="1000-1999">1000-1999</option>
+                            <option value="2000+">2000+</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Discount" id="discount">
+                            <option value="DISCOUNT" style="width: 100%;">DISCOUNT</option>
+                            <option value="Under 499 Store">Under 499 Store</option>
+                            <option value="Under 999 Store">Under 999 Store</option>
+                            <option value="Under 1499 Store">Under 1499 Store</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Active_in" id="active_in">
+                            <option value="Active_in" style="width: 100%;">ACTIVE INGREDIENT</option>
+                            <option value="AHA/BHA">AHA/BHA</option>
+                            <option value="Aloe Vera">Aloe Vera</option>
+                            <option value="Avocado">Avocado</option>
+                            <option value="Glycolic Acid">Glycolic Acid</option>
+                            <option value="Green Tea">Green Tea</option>
+                            <option value="Hyaluronic Acid">Hyaluronic Acid</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Skin_hair" id="skin_hair">
+                            <option value="Skin_Hair" style="width: 100%;">SKIN/HAIR TYPE</option>
+                            <option value="Coloured/Treated Hair">Coloured/Treated Hair</option>
+                            <option value="Combination Skin">Combination Skin</option>
+                            <option value="Curly & Wavy Hair">Curly & Wavy Hair</option>
+                            <option value="Dry Skin">Dry Skin</option>
+                            <option value="Mature Skin">Mature Skin</option>
+                            <option value="Normal Skin">Normal Skin</option>
+                            <option value="Oily & Acne-prone Skin">Oily & Acne-prone Skin</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Rating" id="rating">
+                            <option value="RATING" style="width: 100%;">AVG. CUSTMORE RATING </option>
+                            <option value="star5">&#11088; &#11088; &#11088; &#11088; &#11088;</option>
+                            <option value="star4">&#11088; &#11088; &#11088; &#11088;</option>
+                            <option value="star3">&#11088; &#11088; &#11088;</option>
+                            <option value="star2">&#11088; &#11088; </option>
+                            <option value="star1">&#11088;</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Prevernce" id="prevernce">
+                            <option value="PREFRENCE" style="width: 100%;">PREFRENCE</option>
+                            <option value="Colour-free">Colour-free</option>
+                            <option value="Fregence-free">Fregence-free</option>
+                            <option value="Silicon-free">Silicon-free</option>
+                            <option value="Sulphate-free">Sulphate-free</option>
+                        </select>
+                        <hr>
+                        <select class="beauty" name="Fregence" id="fregence">
+                            <option value="FREGNENCE" style="width: 100%;">FREGNENCE</option>
+                            <option value="Drivin' Me Cherry">Drivin' Me Cherry"</option>
+                        </select>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-products">
+
+                <div id="PRODUCTS" class="products">
+                    <div>
+
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off1">25% off</h4>
+                            </div>
+                            <img id="img1" src="/img/product1.jpg" alt="">
+                        </div>
+                        <div class="ProductDetails">
+                            <div id="rating1" class="RATING">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">1320 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="body"> Daily + Weekly Green Tea Kit For Clearer Skin</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice1"><del class="crossprice">&#8377;2270.00</del>&nbsp;</span>&#8377;
+                                <span id="price1">1270.00</span>
+                            </div>
+
+                            <div onclick="AddToCart(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off2">20% off</h4>
+                            </div>
+                            <img id="img2" src="/img/product2.jpg" alt="">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">130 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="skin">15% Vitamin C Face Serum with Mandarin</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice2"><del class="crossprice">&#8377;1999.00</del>&nbsp;</span> &#8377;
+                                <span id="price2">1599.00</span>
+                            </div>
+                            <div onclick="AddToCart2(event)" class=" ADDTOCART ">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage ">
+                            <div id="DiscountTag">
+                                <h4 id="off3">10% off</h4>
+                            </div>
+                            <img id="img3" src="/img/product3.jpg " alt=" ">
+                        </div>
+                        <div class="ProductDetails ">
+                            <div class="RATING ">
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="reviews ">1320 reviews</span>
+                            </div>
+                            <div class="ProductName ">
+                                <p id="kit">Green Tea Acne-Control Kit - Limited Edition</p>
+                            </div>
+                            <div class="productline "></div>
+                            <div class="ProductPrice ">
+                                <span id="delprice3"><del class="crossprice">&#8377;1599.00</del>&nbsp;</span>&#8377;
+                                <span id="price3">1199.00</span>
+                            </div>
+                            <div onclick="AddToCart3(event)" class="ADDTOCART ">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage ">
+                            <div id="DiscountTag">
+                                <h4 id="off4">18% off</h4>
+                            </div>
+                            <img id="img4" src="/img/product4.jpg " alt=" ">
+                        </div>
+                        <div class="ProductDetails ">
+                            <div class="RATING ">
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="reviews ">100 reviews</span>
+                            </div>
+                            <div class="ProductName ">
+                                <p id="bodylovin">Plum BodyLovin' Limited Edition Pamper Kit</p>
+                            </div>
+                            <div class="productline "></div>
+                            <div class="ProductPrice ">
+                                <span id="delprice4"><del class="crossprice">&#8377;999.00</del>&nbsp;</span>&#8377;
+                                <span id="price4">795.00</span>
+                            </div>
+                            <div onclick="AddToCart4(event)" class="ADDTOCART ">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off5">18% off</h4>
+                            </div>
+                            <img id="img5" src="/img/product6.jpg " alt=" ">
+                        </div>
+                        <div class="ProductDetails ">
+                            <div class="RATING ">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="review ">200 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="hydration">Green Tea All-Day Hydration Set Niacinamide</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice5"><del class="crossprice">&#8377;1795.00</del>&nbsp;</span>&#8377;
+                                <span id="price5">1270.00</span>
+                            </div>
+                            <div onclick="AddToCart5(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off6">18% off</h4>
+                            </div>
+                            <img id="img6" src="/img/product5.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails ">
+                            <div class="RATING ">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">190 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="trio">Olive & Macadamia Get Nourished Trio</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice6"><del class="crossprice">&#8377;995.00</del>&nbsp;</span>&#8377;
+                                <span id="price6">595.00</span>
+                            </div>
+                            <div onclick="AddToCart6(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off7">22% off</h4>
+                            </div>
+                            <img id="img7" src="/img/product7.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING ">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">12 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="vanilla">Plum BodyLovin' Beachy & Vanilla Vibes Body</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice7"><del class="crossprice">&#8377;2599.00</del>&nbsp;</span>&#8377;
+                                <span id="price7">1999.00</span>
+                            </div>
+                            <div onclick="AddToCart7(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off8">5% off</h4>
+                            </div>
+                            <img id="img8" src="/img/product8.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">1700 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="rumba">Plum BodyLovin' Bestsellin' Hawaiian Rumba</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice8"><del class="crossprice">&#8377;2999.00</del>&nbsp;</span>&#8377;
+                                <span id="price8">2595.00</span>
+                            </div>
+                            <div onclick="AddToCart8(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off9">22% off</h4>
+                            </div>
+                            <img id="img9" src="/img/product9.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING ">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">1123 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="greentea">Green Tea All-Day Care Combo | For Oil-Free</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice9"><del class="crossprice">&#8377;699.00</del>&nbsp;</span>&#8377;
+                                <span id="price9">499.00</span>
+                            </div>
+                            <div onclick="AddToCart9(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off10">5% off</h4>
+                            </div>
+                            <img id="img10" src="/img/product10.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING ">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">10 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="candy">Candy Melts Lip Loves - Pack of 2 Lip Balms</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice10"><del class="crossprice">&#8377;390.00</del>&nbsp;</span>&#8377;
+                                <span id="price10">351.00</span>
+                            </div>
+                            <div onclick="AddToCart10(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off11">35% off</h4>
+                            </div>
+                            <img id="img11" src="/img/product11.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">1100 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="ricewater">10% Niacinamide Face Serum with Rice Water </p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice11"><del class="crossprice">&#8377;310.00</del>&nbsp;</span>&#8377;
+                                <span id="price11">245.00</span>
+                            </div>
+                            <div onclick="AddToCart11(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off12">25% off</h4>
+                            </div>
+                            <img id="img12" src="/img/product12.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING ">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">100 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="chocolate">Plum BodyLovin' Best Of Vanilla Vibes Bundle</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice12"><del class="crossprice">&#8377;790.00</del>&nbsp;</span>&#8377;
+                                <span id="price12">520.00</span>
+                            </div>
+                            <div onclick="AddToCart12(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off13">10% off</h4>
+                            </div>
+                            <img id="img13" src="/img/product13.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING">
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="rating">&starf;</span>
+                                <span class="reviews">1100 reviews</span>
+                            </div>
+                            <div class="ProductName">
+                                <p id="oilfree">Green Tea Oil-Free Moisturizer | Contains Niacinamide</p>
+                            </div>
+                            <div class="productline"></div>
+                            <div class="ProductPrice">
+                                <span id="delprice13"><del class="crossprice">&#8377;2270.00</del>&nbsp;</span>&#8377;
+                                <span id="price13">1270.00</span>
+                            </div>
+                            <div onclick="AddToCart13(event)" class="ADDTOCART">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off14">12% off</h4>
+                            </div>
+                            <img id="img14" src="/img/product14.jpg" alt=" ">
+                        </div>
+                        <div class="ProductDetails">
+                            <div class="RATING">
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="reviews ">120 reviews</span>
+                            </div>
+                            <div class="ProductName ">
+                                <p id="aleovera">Hello Aloe Just Gel | Aloe Vera Gel</p>
+                            </div>
+                            <div class="productline "></div>
+                            <div class="ProductPrice ">
+                                <span id="delprice14"><del class="crossprice">&#8377;2270.00</del>&nbsp;</span>&#8377;
+                                <span id="price14">1270.00</span>
+                            </div>
+                            <div onclick="AddToCart14(event) " class="ADDTOCART ">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ProductImage">
+                            <div id="DiscountTag">
+                                <h4 id="off15">15% off</h4>
+                            </div>
+                            <img id="img15" src="/img/product15.jpg " alt=" ">
+                        </div>
+                        <div class="ProductDetails ">
+                            <div class="RATING ">
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="rating ">&starf;</span>
+                                <span class="reviews ">133 reviews</span>
+                            </div>
+                            <div class="ProductName ">
+                                <p id="night">Green Tea Night Gel - Twin Pack Limited Edition</p>
+                            </div>
+                            <div class="productline "></div>
+                            <div class="ProductPrice ">
+                                <span id="delprice15"><del class="crossprice">&#8377;525.00</del>&nbsp;</span>&#8377;
+                                <span id="price15">472.00</span>
+                            </div>
+                            <div onclick="AddToCart15(event) " class="ADDTOCART ">
+                                <div>Add To Cart</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <button>
+            <h1 onclick="returnCart()">view MORE</h1>
+        </button> -->
+    </div>
+
+
+
+
+    <div class="wholefooter">
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-heading footer-1">
+                    <h2>shop</h2>
+                    <a href="#">Skincare</a>
+                    <a href="#">Haircare</a>
+                    <a href="#">Bodycare</a>
+                    <a href="#">Makeup</a>
+                </div>
+                <div class="footer-heading footer-2">
+                    <h2>learn</h2>
+                    <a href="#">Plum blogs</a>
+                    <a href="#">Plum features</a>
+                    <a href="#">Plum Rewards</a>
+
+                </div>
+                <div class="footer-heading footer-3">
+                    <h2 style="color: black;">help</h2>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Empties4Good</a>
+                </div>
+                <div class="footer-email-form">
+                    <h2>For exclusive previews, offers<br> & all things beauty! We hate spam.</h2>
+                    <input type="email" placeholder="enter email address" id="footer-email">
+                    <input type="submit" value="subscribe" id="footer-email-btn">
+                    <hr>
+                    <div class="font">
+                        <div class="icon">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-instagram-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-youtube fa-2x"></i></i></a>
+                            <a href="#" class="mobile-no">+91-7506496604</a>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <a href="#" class="last-mail">hello@plumgoodness.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="sfooter">
+            <p id="rights">© 2021,Plum. All rights reserved.</p>
+            <p id="rights">Privacy Policy&nbsp | &nbspTerms & Conditions</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    // let cart = JSON.parse(localStorage.getItem("viewmore"))
+    // let parent = document.getElementById("PRODUCTS")
+    // console.log(parent)
+
+
+    // function showProducts() {
+    //     cart.forEach(function(product) {
+
+
+    //         let div = document.createElement("div");
+
+    //         var img = document.createElement("img");
+
+    //         img.src = product.Image;
+    //         // console.log(img.src)
+    //         let product_price = document.createElement("p")
+
+    //         product_price.textContent = product.Price;
+
+
+    //         let product_name = document.createElement("p")
+
+    //         product_name.textContent = product.Name;
+
+
+    //         div.append(img, product_name, product_price)
+    //         console.log(div)
+
+    //         parent.append(div);
+    //     });
+    // }
+    // showProducts();
+
+
+
+    // function returnCart() {
+    //     let cart = JSON.parse(localStorage.getItem("viewmore"))
+
+    //     let parent = document.getElementById("PRODUCTS")
+    //         // console.log(parent)
+    //     parent.append(cart)
+
+
+
+    //     // showProducts()
+    // }
+
+
+    function cart() {
+        window.location.href = "cart.html"
+
+    }
+</script>
