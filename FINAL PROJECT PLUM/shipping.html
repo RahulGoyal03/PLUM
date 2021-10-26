@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping</title>
+    <script src="https://kit.fontawesome.com/aa64b81c87.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .checkout-upper {
+            display: flex;
+            /* border: 1px solid black; */
+            justify-content: center;
+        }
+        
+        .checkout-top>p,
+        .checkout-top2>p {
+            margin: 1px;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            /* font-weight: bold; */
+            font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        }
+        
+        .checkout-top {
+            background-image: url("https://cdn.shopify.com/s/files/1/0390/2985/files/Shap-3.png?v=1580291334");
+            width: 20%;
+            height: 32px;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-left: 8px;
+            text-align: center;
+        }
+        
+        .checkout-top2 {
+            background-image: url("https://cdn.shopify.com/s/files/1/0390/2985/files/Shap-1.png?v=1580284424");
+            width: 20%;
+            height: 32px;
+            font-size: 15px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-left: 8px;
+            text-align: center;
+        }
+        
+        .cont2 {
+            display: flex;
+        }
+        
+        .imge2 {
+            width: 1200px;
+            height: 350px;
+        }
+        
+        .imge1 {
+            margin-top: 10%;
+            margin-left: 15%;
+        }
+        
+        .container {
+            display: flex;
+            margin-left: 15%;
+        }
+        
+        .subcontainer1 {}
+        
+        .contactbox {
+            border: 1px solid #cbc8c8;
+            ;
+            width: 490px;
+            height: fit-content;
+            font-size: 22px;
+        }
+        
+        .input {
+            width: 250px;
+            margin-top: 2%;
+            border: none
+        }
+        
+        .shipmethod {
+            margin-top: 2%;
+        }
+        
+        .continuebt {
+            display: flex;
+        }
+        
+        #follow-btn {
+            width: 200px;
+            height: 55px;
+            background-color: rgb(94, 12, 138);
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 19px;
+            margin-top: 2%;
+            margin-left: 35%;
+        }
+        
+        #follow-btn:hover {
+            cursor: pointer;
+            background-color: rgb(168, 113, 219);
+            transition: all 0.4s ease-out;
+        }
+        
+        .bottom {
+            border-top: 2px solid rgb(99, 44, 44);
+            margin-top: 60%;
+            margin-left: 2%;
+            margin-right: 3%;
+        }
+        
+        .policy:hover {
+            color: rgb(145, 101, 202);
+        }
+        
+        .subcontainer2 {
+            background-color: #EEEEEE;
+            margin-left: 10%;
+            width: 600px;
+        }
+        
+        .sideleft {
+            margin-left: 8%;
+        }
+        
+        #hey {
+            color: #5b0c8b;
+            font-size: 20px;
+        }
+        
+        .pic-text {
+            display: flex;
+        }
+        
+        .free {
+            margin-left: 15%;
+        }
+        
+        .off {
+            color: gray;
+            margin-top: -1%;
+        }
+        
+        .redeem {}
+        
+        .range1 {
+            display: flex;
+        }
+        
+        #slider {
+            width: 60%;
+        }
+        
+        #Redeem {
+            width: 180px;
+            height: 40px;
+            background-color: rgb(94, 12, 138);
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-left: 18%;
+        }
+        
+        #Redeem:hover {
+            cursor: pointer;
+            background-color: rgb(156, 93, 207);
+            transition: all 0.4s ease-out;
+        }
+        
+        .Dcode {
+            width: 280px;
+            height: 29px;
+        }
+        
+        #apply {
+            height: 32px;
+            width: 80px;
+            color: white;
+            background-color: rgb(163, 159, 159);
+            margin-left: 2%;
+        }
+        
+        .im1 {
+            width: 15%;
+            height: 5%;
+        }
+        
+        .te {
+            margin-left: 3%;
+        }
+        
+        #plumcontact {
+            display: inline-block;
+            color: rgb(94, 12, 140);
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        #plumshipto {
+            display: inline-block;
+            color: rgb(94, 12, 140);
+            font-size: 100%;
+            font-weight: bold;
+        }
+        
+        #promo:hover {
+            cursor: pointer;
+            background-color: rgb(156, 93, 207);
+        }
+        
+        #promo {
+            padding: 4px;
+            height: 30px;
+            width: 27%;
+            font-size: 17px;
+            margin-left: 20px;
+            background-color: rgb(94, 12, 138);
+            color: white;
+            border-radius: 7%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="checkout-upper">
+        <div class="checkout-top">
+            <p>Information</p>
+        </div>
+        <div class="checkout-top2">
+            <p>Shipping</p>
+        </div>
+        <div class="checkout-top">
+            <!--top2 - top -->
+            <p>Payment</p>
+        </div>
+    </div>
+
+
+    <div class="cont2">
+        <div style="width: 200px;" class="imge1">
+            <img style="width: 100%;" src="https://cdn.shopify.com/s/files/1/0390/2985/files/final-logo.png?62892">
+        </div>
+        <div class="imge2.1">
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/custom_resized_e3b2e6ea-a049-423d-b6e0-14e786f23cb1.jpg?62892" class="imge2">
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="subcontainer1">
+            <div class="contactbox">
+                <label>contact: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <p id="plumcontact"></p>
+
+
+            </div>
+            <div class="contactbox">
+                <label>ship to: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <p id="plumshipto"></p>
+
+
+            </div><br><br><br>
+            <h3>Shipping method</h3>
+            <div class="contactbox ">
+                <div class="shipmethod">
+                    <p style='font-size: 15px;'><i class="fas fa-dot-circle"></i>&nbsp;&nbsp;&nbsp;FREE EXPRESS SHIPPING ANYWHERE IN INDIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free
+                    </p>
+                </div>
+            </div>
+
+            <div class="continuebt">
+                <a style="margin-top: 15px;" href="checkout.html">
+                    <span style="font-size: 14px;     margin-left: -29px;"><i class="fas fa-less-than"></i> Return to information</span>
+                </a>
+                <input onclick="gotopayment()" type="submit" value="Continue to payment" id="follow-btn">
+
+            </div>
+            <div class="bottom">
+                <p class="policy">Refund policy&nbsp;&nbsp;&nbsp; Shipping policy&nbsp;&nbsp;&nbsp; Private policy&nbsp;&nbsp;&nbsp; Terms of service</p>
+            </div>
+
+
+
+        </div><br>
+        <div class="subcontainer2">
+            <div class="sideleft">
+                <div>
+                    <p id="hey">Hey plumster! Do not forget to sign up or login in to earn and redeem your reward points.
+                    </p>
+                </div>
+                <div class="pic-text">
+                    <img src="https://cdn.shopify.com/s/files/1/0390/2985/products/01moodshot_7_small.png?v=1630922511
+                        " class="im1" />
+                    <h4 class="te">E-Luminence Simply Supple Cleansing <br>Balm | Travel-Friendli | 10g Mini Pack
+                        <p class="off">(100% off)</p>
+                    </h4>
+                    <h4 class="free">Free</h4>
+                </div>
+                <div class="pic-text">
+                    <img src="https://cdn.shopify.com/s/files/1/0390/2985/products/06_OM_New_1_1f494331-70c5-4d1b-9857-9452e83f831a_small.jpg?v=1630921781
+                        " class="im1" />
+                    <h4 class="te">Olive & Macadamia Get Nourished Trio <br>| Dull, Dry Damage Hair |Sulphate<br> Free | 100% Vegan | with Free Hair Oil</h4>
+                    <h4 class="free">
+                    </h4>
+
+                </div>
+                <hr>
+
+                <div class="redeem">
+
+                    <h4>Redeem points</h4>
+
+                    <p>Use the slider to apply a discount</p>
+
+
+                    <div class="range1">
+                        <input type="range" min="0" max="100" value="50" id="slider">
+                        <input type="submit" value="Redeem for Rs.50" id="Redeem">
+                    </div>
+
+                </div>
+                <hr>
+
+                <div>
+                    <input style="height: 25px; width: 50%; font-size: 18px;" id="applypromo" type="text" placeholder="Apply Coupon">
+                    <button id="promo" onclick="promocode()">Promocode</button>
+                    <p id="promoinvalid"></p>
+
+                </div>
+                <hr>
+                <div>
+                    <div>
+                        <p>Subtotal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8377;
+                            <span id="TOTAL1">0</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p>Shipping &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free
+                        </p>
+                    </div>
+
+                </div>
+                <hr>
+                <div>
+                    <div>
+                        <h3>Total <span id="TOTAL" style="font-size: 20px;margin-left: 55%;">0
+                            </span></h3>
+                        <p>Including ₹100.32 in taxes</p>
+                    </div>
+                    <div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+</body>
+
+</html>
+
+
+
+<script>
+    let details = JSON.parse(localStorage.getItem("data"))
+        // console.log(details)
+
+    let contact = document.getElementById("plumcontact")
+    let ship = document.getElementById("plumshipto")
+
+    // contact.textContent = details.Mobile
+
+    // console.log(contact)
+
+
+
+
+    details.forEach(function(detail) {
+        // let details = JSON.parse(localStorage.getItem("plumcart"))
+
+        contact.textContent = detail.Mobile
+
+        ship.textContent = detail.Address
+
+
+        //console.log(total)
+
+    })
+    let cart = JSON.parse(localStorage.getItem("plumcart"))
+
+    let TOTAL = document.getElementById("TOTAL")
+        // console.log(TOTAL)
+
+    let total = 0;
+    cart.forEach(function(product) {
+        let cart = JSON.parse(localStorage.getItem("plumcart"))
+
+        console.log((product.Price))
+        total = total + parseInt(product.Price);
+        console.log(typeof(total))
+        TOTAL.innerText = "₹" + total;
+
+        TOTAL.style.fontWeight = "bold"
+
+
+        //console.log(total)
+
+    })
+
+    let TOTAL1 = document.getElementById("TOTAL1")
+        // console.log(TOTAL)
+
+    let total1 = 0;
+    cart.forEach(function(product) {
+        let cart = JSON.parse(localStorage.getItem("plumcart"))
+
+        console.log((product.Price))
+        total1 = total1 + parseInt(product.Price);
+        console.log(typeof(total1))
+        TOTAL1.innerText = total1
+        total1;
+
+        TOTAL1.style.fontWeight = "bold"
+
+
+        //console.log(total)
+
+    })
+
+
+
+
+
+    function promocode(p) {
+        let promocode = document.getElementById("promo")
+        let applypromo = document.getElementById("applypromo")
+        let alert = document.getElementById("promoinvalid")
+
+        if (applypromo.value === "MASAI30") {
+            discount = total * (30 / 100)
+            total = total - discount
+            TOTAL.innerText = "₹" + parseInt(total)
+            applypromo.style.border = "1px solid green"
+            alert.textContent = "Valid Promocode !!"
+            alert.style.color = "green"
+            DisableIt();
+        } else {
+            alert.textContent = "Invalid Promocode"
+                // alert.style.border = "1px solid red"
+            applypromo.style.border = "1px solid red"
+            alert.style.color = "red"
+                // alert.style.display = "inline-block"
+
+        }
+
+        function DisableIt() {
+            if (applypromo.value === "MASAI30") {
+                document.getElementById("promo").disabled = true;
+            }
+        }
+    }
+
+    function gotopayment() {
+        window.location.href = "payment.html"
+    }
+</script>

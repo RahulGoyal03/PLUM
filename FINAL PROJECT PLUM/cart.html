@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="cartitems.js"></script> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa64b81c87.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="cart.css">
+    <title>PLUM CART</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topHeading">
+            <p>Welcome to our PlumGoodness Store!!</p>
+        </div>
+        <div class="navbar">
+            <div class="list"><img src="/img/baseline_list_black_24dp.png" alt=""></div>
+
+            <div onclick="home()" class="mainlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_skin_hair_maekup.png?v=1628248101" alt="logo">
+                <div class="line"></div>
+            </div>
+            <div class="secondlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_bodylovin.png?v=1628248113" alt="logo">
+                <div class="line2"></div>
+            </div>
+
+            <div class="searchbar">
+
+                <input id="search" type="text" placeholder="Search...">
+            </div>
+            <div class="favorite"><img src="/img/baseline_favorite_border_black_24dp.png" alt=""></div>
+            <div class="addtocart"><img src="/img/baseline_local_mall_black_24dp.png" alt="">
+                <p id="masai">0</p>
+            </div>
+
+        </div>
+    </header>
+
+    <h1 class="welcomecart">my cart</h1>
+    <div id="PRODUCTS">
+
+    </div>
+
+    <div class="total">
+        <h2>order summary</h2>
+        <hr>
+        <p id="CHAR">Total</p>
+        <span>&#8377;</span>
+        <p id="TOTAL">0</p>
+        <hr>
+
+
+        <div class="emi">or 4 interest-free payments of ₹ 626.50 with <img src="https://cdn.sezzle.in/branding/2.0/Sezzle_Logo_FullColor.svg" style="transform-origin: center top; transform: scale(1); max-height: 18px; max-width: 75px;"> <code class="sezzle-info-icon">ⓘ</code>
+        </div>
+        <div onclick="checkout()" class="proceed">proceed to checkout</div>
+
+        <div class="congratulations">Congratulations! You've got FREE shipping</div>
+
+    </div>
+
+
+
+
+
+
+    <div class="wholefooter">
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-heading footer-1">
+                    <h2>shop</h2>
+                    <a href="#">Skincare</a>
+                    <a href="#">Haircare</a>
+                    <a href="#">Bodycare</a>
+                    <a href="#">Makeup</a>
+                </div>
+                <div class="footer-heading footer-2">
+                    <h2>learn</h2>
+                    <a href="#">Plum blogs</a>
+                    <a href="#">Plum features</a>
+                    <a href="#">Plum Rewards</a>
+
+                </div>
+                <div class="footer-heading footer-3">
+                    <h2 style="color: black;">help</h2>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Empties4Good</a>
+                </div>
+                <div class="footer-email-form">
+                    <h2>For exclusive previews, offers<br> & all things beauty! We hate spam.</h2>
+                    <input type="email" placeholder="enter email address" id="footer-email">
+                    <input type="submit" value="subscribe" id="footer-email-btn">
+                    <hr>
+                    <div class="font">
+                        <div class="icon">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-instagram-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-youtube fa-2x"></i></i></a>
+
+                            <a href="#" class="mobile-no">+91-7506496604</a>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <a href="#" class="last-mail">hello@plumgoodness.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="sfooter">
+            <p id="rights">© 2021,Plum. All rights reserved.</p>
+            <p id="rights">Privacy Policy&nbsp | &nbspTerms & Conditions</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem("plumcart"))
+    let parent = document.getElementById("PRODUCTS")
+
+    let countNum = document.getElementById("masai")
+    countNum.textContent = cart.length
+
+
+    function showProducts() {
+        cart.forEach(function(product) {
+
+
+            let div = document.createElement("div");
+
+            var img = document.createElement("img");
+
+            img.src = product.Image;
+            // console.log(img.src)
+            let product_price = document.createElement("p")
+
+
+            product_price.textContent = "Rs " + product.Price;
+
+
+            let product_name = document.createElement("p")
+
+            product_name.textContent = product.Name;
+
+            let hr = document.createElement("hr")
+
+
+            div.append(img, product_name, product_price, hr)
+                // console.log(div)
+
+            parent.append(div);
+        });
+    }
+    showProducts();
+
+
+    let TOTAL = document.getElementById("TOTAL")
+        // console.log(TOTAL)
+
+    let total = 0;
+    cart.forEach(function(product) {
+        let cart = JSON.parse(localStorage.getItem("plumcart"))
+
+        console.log((product.Price))
+        total = total + parseInt(product.Price);
+        console.log(typeof(total))
+        TOTAL.innerText = total;
+
+        TOTAL.style.fontWeight = "bold"
+
+
+        //console.log(total)
+
+    })
+
+    function home() {
+        window.location.href = "home.html"
+    }
+
+    function checkout() {
+        window.location.href = "checkout.html"
+    }
+</script>

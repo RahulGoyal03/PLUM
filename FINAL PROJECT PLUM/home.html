@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="footerCss.css">
+    <script src="https://kit.fontawesome.com/aa64b81c87.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <title>Plum</title>
+
+</head>
+
+
+<body>
+    <header>
+        <div class="topHeading">
+            <p>Welcome to our PlumGoodness Store!!</p>
+        </div>
+        <div class="navbar">
+            <div class="list"><img src="/img/baseline_list_black_24dp.png" alt=""></div>
+            <div class="mainlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_skin_hair_maekup.png?v=1628248101" alt="logo">
+                <div class="line"></div>
+            </div>
+            <div class="secondlogo"><img src="https://cdn.shopify.com/s/files/1/0390/2985/files/20210806_plum_bodylovin.png?v=1628248113" alt="logo">
+                <div class="line2"></div>
+            </div>
+
+            <div class="searchbar">
+
+                <input id="search" type="text" placeholder="Search...">
+            </div>
+            <div class="favorite"><img src="/img/baseline_favorite_border_black_24dp.png" alt=""></div>
+            <div onclick="cart()" class="addtocart" style="border-color: yellow;"><img src="/img/baseline_local_mall_black_24dp.png" alt=""></div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <div id="slide"></div>
+    <script>
+        let images = [
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Desktop_Homepage_8_0ecb13b7-b539-4c6d-ad0e-d1d8a9f921ef.jpg?v=1633060898",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Homepage_Banner_Desktop_Site.jpg?v=1632974727",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Desktop_Homepage_16c60e24-567d-4172-9b66-e8d6ea6b6e53.jpg?v=1632719590",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/Desktop_Homepage_3_c5a2f83b-5c60-498c-9728-8dc07cf9de89.jpg?v=1632201593",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/DESK_HP_BANNER_V2_e54f50e1-f314-4819-ac76-cff4d0154299.jpg?v=1632733163",
+            "https://cdn.shopify.com/s/files/1/0390/2985/files/slider-desktop-edp-new-version_1.jpg?v=1632740165"
+        ];
+        let cont = document.getElementById("slide");
+        let interval;
+
+        function slide() {
+
+            let count = 0;
+            let img = document.createElement("img");
+            img.src = images[0];
+            cont.append(img);
+            count = count + 1;
+
+
+            let interval = setInterval(function() {
+                cont.innerHTML = null;
+                if (count == images.length) {
+                    count = 0;
+                }
+
+                let img = document.createElement("img");
+                img.src = images[count];
+                cont.append(img);
+
+                count = count + 1;
+            }, 5000)
+
+        }
+
+        slide();
+    </script>
+    <div class="color2"></div>
+    <div id="starsbox">
+        <div id="clean">
+            <h1 id="styleclean">clean</h1>
+            <h4>no nasties,</h4>
+            <h4>no animal</h4>
+            <h4>ingredients</h4>
+        </div>
+        <div id="real">
+            <h1 id="styleclean">real</h1>
+            <h4>no lies,</h4>
+            <h4>no beauty</h4>
+            <h4>standards</h4>
+        </div>
+        <div id="good">
+            <h1 id="styleclean">good</h1>
+            <h4>for you</h4>
+            <h4>and</h4>
+            <h4>planet</h4>
+        </div>
+    </div>
+
+    <div class="color3"></div>
+    <a href="https://plumgoodness.com/page/cleanrealgood"><strong id="btn">#cleanrealgood &gt;</strong></a>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("mouseenter", chnagePurple);
+        btn.addEventListener("mouseleave", chnagePurple2);
+
+        function chnagePurple() {
+            btn.style.backgroundColor = "purple"
+            btn.style.color = "white"
+            btn.style.borderRadius = "5%"
+
+
+        }
+
+        function chnagePurple2() {
+            btn.style.backgroundColor = "white"
+            btn.style.color = "purple"
+            btn.style.borderRadius = "5%"
+
+
+        }
+
+        function cart() {
+            window.location.href = "cart.html"
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <div class="pick_heading">
+        <h3>pick a plum</h3>
+    </div>
+    <div class="pick_container">
+
+        <div class="pick_product">
+            <div class="skin_img">
+                <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/2_v2_DESK_400x.jpg?v=1632824910" class="pick1" />
+            </div>
+            <div class="skin_img">
+                <img src="	https://cdn.shopify.com/s/files/1/0390/2985/files/3_v2_DESK_400x.jpg?v=1632824889" class="pick1" />
+            </div>
+            <div class="skin_img">
+                <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/2_v2_DESK_400x.jpg?v=1632824910" class="pick1" />
+            </div>
+
+            <div class="skin_img">
+                <img src="	https://cdn.shopify.com/s/files/1/0390/2985/files/4_v2_DESK_400x.jpg?v=1632824949" class="pick1" />
+            </div>
+            <div class="skin_img">
+                <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/f_website_long_banner_770x.jpg?v=1632824989" class="pick1" />
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container2">
+        <div class="bestsellers">
+            <h2>bestsellers</h2>
+
+
+        </div>
+        <div onclick="aaaa(event)" id="PRODUCTS" class="products">
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>15% off</h4>
+                    </div>
+                    <img src="/img/product15.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+
+                    <div class="ProductName">
+                        <p>Green Tea Night Gel - Twin Pack Limited Edition Pamper Kit</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;1700.00</del> &#8377;1399.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>25% off</h4>
+                    </div>
+                    <img src="/img/product11.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+
+                    <div class="ProductName">
+                        <p>Plum BodyLovin' Limited Edition Pamper Kit</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;1800.00</del> &#8377;1499.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>15% off</h4>
+                    </div>
+                    <img src="/img/product5.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+
+                    <div class="ProductName">
+                        <p>15% Vitamin C Face Serum with Mandarin | For Glowing Skin</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;2700.00</del> &#8377;1999.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="google1">
+                <div class="ProductImage">
+                    <div id="DiscountTag">
+                        <h4>25% off</h4>
+                    </div>
+                    <img src="/img/product1.jpg" alt="">
+                </div>
+                <div class="ProductDetails">
+
+                    <div class="ProductName">
+                        <p> Daily + Weekly Green Tea Kit For Clearer Skin | Free Bag</p>
+                    </div>
+                    <div class="productline"></div>
+                    <div class="ProductPrice">
+                        <p><del class="crossprice">&#8377;8700.00</del> &#8377;7399.00</p>
+                    </div>
+                    <div class="ADDTOCART">
+                        <div>Add To Cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <input onclick="Views()" type="submit" value="View more" id="view-btn2">
+
+
+        <div class="bestproduct">
+
+        </div>
+    </div>
+
+    <div class="boxrow">
+        <div class="box-col">
+            <p>
+                We love the fact thatthese Formulations are vegan, cruelty->free $ paraben-free
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/1_24950cd6-ac9b-45fc-9b50-92b1a904e9a8_200x.png?v=1620283572" class="box-img" />
+        </div>
+        <div class="box-col">
+            <p>
+                Your hair needs a boost $ there's no better candidate that the plum Mega Moisturizing Hair Mask
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/6_17ac2b85-481c-4198-a4bf-cfa053a6d6e7_200x.jpg?v=1624887311" class="box-img" />
+        </div>
+        <div class="box-col">
+            <p>
+                This clay-based face mask has AhAs to exfoliate and Green Tea to heal and prevent acne
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0390/2985/files/2_f1e3b604-b098-49e6-9ca0-c3a094732227_200x.png?v=1620283603" class="box-img" />
+        </div>
+
+    </div>
+
+
+    <div>
+        <input type="submit" value="View more" id="view-btn">
+    </div>
+
+    <div class="slid-container">
+        <div class="slid-heading">
+            <h2 style="
+            position: relative;
+            top: 2100px;
+        ">@plumgoodness</h2>
+        </div>
+        <div>
+            <marquee>
+                <img src="/img/product1.jpg" class="slid-img" />
+
+
+                <img src="img/product2.jpg" class="slid-img" />
+                <img src="img/product3.jpg" class="slid-img Simg1" />
+                <img src="img/product4.jpg" class="slid-img" />
+                <img src="img/product5.jpg" class="slid-img" />
+                <br>
+                <img src="img/product6.jpg" class="slid-img" />
+                <img src="img/product7.jpg" class="slid-img Simg1" />
+                <img src="img/product8.jpg" class="slid-img" />
+                <img src="img/product9.jpg" class="slid-img Simg1" />
+
+                <img src="img/product15.jpg" class="slid-img" />
+                <img src="img/product14.jpg" class="slid-img" />
+
+            </marquee>
+        </div>
+
+        <div>
+            <input type="submit" value="follow us" id="follow-btn">
+        </div>
+    </div>
+
+
+
+
+
+    <div class="wholefooter">
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-heading footer-1">
+                    <h2>shop</h2>
+                    <a href="#">Skincare</a>
+                    <a href="#">Haircare</a>
+                    <a href="#">Bodycare</a>
+                    <a href="#">Makeup</a>
+                </div>
+                <div class="footer-heading footer-2">
+                    <h2>learn</h2>
+                    <a href="#">Plum blogs</a>
+                    <a href="#">Plum features</a>
+                    <a href="#">Plum Rewards</a>
+
+                </div>
+                <div class="footer-heading footer-3">
+                    <h2 style="color: black;">help</h2>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Empties4Good</a>
+                </div>
+                <div class="footer-email-form">
+                    <h2>For exclusive previews, offers<br> & all things beauty! We hate spam.</h2>
+                    <input type="email" placeholder="enter email address" id="footer-email">
+                    <input type="submit" value="subscribe" id="footer-email-btn">
+                    <hr>
+                    <div class="font">
+                        <div class="icon">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-instagram-square fa-2x"></i></i></a>
+                            <a href="#"><i class="fab fa-youtube fa-2x"></i></i></a>
+                            <a href="#" class="mobile-no">+91-7506496604</a>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <a href="#" class="last-mail">hello@plumgoodness.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="sfooter">
+            <p id="rights">©️ 2021,Plum. All rights reserved.</p>
+            <p id="rights">Privacy Policy&nbsp | &nbspTerms & Conditions</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    function Views() {
+        window.location.href = "products.html"
+
+    }
+</script>
